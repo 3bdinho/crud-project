@@ -1,8 +1,5 @@
 // (title, author, year, genre …)
 const mongoose = require("mongoose");
-const { type } = require("os");
-const { title } = require("process");
-const { boolean } = require("webidl-conversions");
 
 const booksSchema = new mongoose.Schema({
   title: {

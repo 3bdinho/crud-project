@@ -58,7 +58,7 @@ exports.getBook = catchAsync(async (req, res, next) => {
 });
 
 exports.getAllBooks = catchAsync(async (req, res, next) => {
-  const features = new APIFeature(Book.find().req.query)
+  const features = new APIFeature(Book.find(), req.query)
     .filter()
     .sort()
     .limitFields()
