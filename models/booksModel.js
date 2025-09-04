@@ -5,12 +5,12 @@ const booksSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    minlength: 5,
+    // minlength: 5,
   },
   author: {
     type: String,
     required: true,
-    minlength: 5,
+    // minlength: 5,
   },
   year: Number,
   genre: String,

@@ -13,7 +13,7 @@ exports.createBook = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.delete = catchAsync(async (req, res, next) => {
+exports.deleteBook = catchAsync(async (req, res, next) => {
   const book = await Book.findByIdAndUpdate(
     req.params.id,
     { active: false },
@@ -31,7 +31,7 @@ exports.delete = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.update = catchAsync(async (req, res, next) => {
+exports.updateBook = catchAsync(async (req, res, next) => {
   const book = await Book.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -46,7 +46,7 @@ exports.update = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getBook = catchAsync(async (req, res, next) => {
+exports.getBookById = catchAsync(async (req, res, next) => {
   const book = await Book.findById(req.params.id);
   if (!book) {
     return next(new AppError("No book found with that ID", 404));
